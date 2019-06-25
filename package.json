@@ -1,0 +1,19 @@
+{
+  "name": "desenhos-insta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Mut",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "fs": "0.0.1-security",
+    "jimp": "^0.5.6",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
