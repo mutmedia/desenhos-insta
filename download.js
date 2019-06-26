@@ -24,12 +24,17 @@ const main = async () => {
         console.log("skipped")
         continue;
       }
-      var img = (await Jimp.read(imageUrl)).resize(Jimp.AUTO, 1024);
-      var result = await new Jimp(1024, 1024, 0xffffffff)
+      var img = (await Jimp.read(imageUrl))
+              .resize(Jimp.AUTO, 1024)
+      var result = await new Jimp(1024, 1024, 0x000000ff)
       await result
               .blit(img, 512 - img.bitmap.width/2, 0)
               .quality(100)
               .write(`./downloads/${i}_${j}.png`)
+
+      var image = await Jimp.read(`./downloads/${i}_${j}.png`)
+      image.rgba(false)
+      await image.write(`./downloads/${i}_${j}.png`)
       console.log("done")
     }
   }
